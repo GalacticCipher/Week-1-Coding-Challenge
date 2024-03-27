@@ -1,3 +1,4 @@
+// This function calculates net salary based of a person based on basic salary,benefits and various deductions.
 function calcSalary() {
 
     let basicSalary = document.querySelector("#basicSalary").ariaValueMax;
@@ -6,7 +7,7 @@ function calcSalary() {
     console.log(basicSalary);
     console.log(benefits);
 
-
+// Deduct the benefits from basic salary to get taxable income
     let taxableIncome = (basicSalary - benefits);
 
 
@@ -14,6 +15,7 @@ function calcSalary() {
 
     document.getElementById("taxIncome").innerHTML = taxableIncome;
 
+//Calculate the tax
     if(taxableIncome=24000) {
         tax = Math.floor(taxableIncome *0.1);
     }
@@ -35,6 +37,8 @@ function calcSalary() {
     console.log("tax", tax);
 
     document.getElementById("tax").innerHTML = tax;
+
+    //Calculate nhifDeductions based on the income bracket
 
     if (taxableIncome <= 5999) {
          nhifDeductionDeduction = 150;
@@ -65,7 +69,7 @@ function calcSalary() {
 
     document.getElementById("NHIF").innerHTML = nhifDeduction;
 
-
+//The old rate standard NSSF contribution is 1080
 
     let nssfContribution = 1080;
 
@@ -73,6 +77,7 @@ function calcSalary() {
 
     document.getElementById("nssf").innerHTML = nssfContribution;
 
+//Calculate the net salary by subtracting NHIF,NSSF and tax from the monthly gross pay
 
     let netSalary =  taxableIncome - (nssfContribution + nhifDeduction + tax)
 

@@ -5,9 +5,9 @@
 ## DESCRIPTION:
 
 This repository contains the following programs:
-# Student Grade Generator
-# Speed Detector
-# Net Salary Calculator
+- Student Grade Generator
+- Speed Detector
+- Net Salary Calculator
 
 
 ### STUDENT GRADE GENERATOR;

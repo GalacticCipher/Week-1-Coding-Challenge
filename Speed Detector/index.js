@@ -1,14 +1,26 @@
 function checkSpeed(speed) {
-    const speedLimit = 70;
-    const kmPerPoint = 5;
+ 
+    let carSpeed = document.querySelector("#carSpeed").ariaValueMax;
 
-    if(speed < speedLimit + kmPerPoint) {
-        console.log("Ok");
-        return;
+    console.log(carSpeed);
+
+    let result = "OK";
+
+    if (carSpeed > 70) {
+
+        let demeritPoints = (carSpeed - 70) / 5;
+
+        console.log(demeritPoints);
+
+        result = "Demerit " + Math.floor(demeritPoints);
+
+        if (demeritPoints > 11 ) {
+            result = "License Suspended";
+        }
     }
 
-    const points = Math.floor((speed - speedLimit) / kmPerPoint);
-    if(points >=12)
-    console.log("License Suspended");
-    else console.log("Points", points);
+    console.log(result);
+
+    document.getElementById("result").innerHTML = result;
+    
 }

@@ -1,13 +1,44 @@
-const percent = 90;
 
-if(percent >=79) {
-    grade= "A"
-} else if(percent >=60 && percent < 79) {
-    grade = "B";
-} else if (percent >= 59 && percent < 49) {
-    grade = "C";
-} else if (percent >=49 && percent <40) {
-    grade = "D";
-} else {
-    grade = "E";
+function showResult() {
+
+    let studentMarks = document.querySelector("#studentMarks").ariaValueMax;
+
+    let gradeElement = document.getElementById("grade");
+    console.log(gradeElement);
+
+    console.log(studentMarks);
+
+
+
+    if(studentMarks >= 79) {
+
+        grade = "A";
+
+    }
+    else if(studentMarks >=60) {
+
+        grade = "B";
+
+    }
+    else if (studentMarks >=49) {
+
+        grade = "C";
+
+    }
+    else if(studentMarks >=40) {
+
+        grade = "D";
+
+    }
+    else {
+
+        grade = "E";
+    }
+
+    console.log(grade);
+
+
+    document.getElementById("grade").innerHTML = grade;
+
+    
 }
